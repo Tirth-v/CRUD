@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>Data</title>
+</head>
+<body>
+    <div id="div1">
+        <a href="/home/">Back</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for data in d %}
+            <tr>
+                <td>{{data.u_id}}</td>
+                <td>{{data.u_name}}</td>
+                <td>{{data.u_age}}</td>
+                <td>{{data.u_city}}</td>
+                <td>
+                    <a href="/edit/{{data.u_id}}" style="color:gold">Update</a>
+                    &nbsp; &nbs
+                    <a href="/delete/{{data.u_id}}" style="color:gold">Udado</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+</html>
